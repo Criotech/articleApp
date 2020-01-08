@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="body">
+    <div class="overlay overlay--hidden"></div>
+    <div class="modal modal--hidden">
+        <div id="modal__contents" class="modal__contents">
+            <div class="modal__close-bar">
+                <span style="font-size: 20px; color: grey">X</span>
+            </div>
+            <p style="font-size: 20px; margin: 20px;">Fill the form below to upload your article</p>
+            <form id="uploadArticleForm">
+                <input type="text" id="title" placeholder="Article Title">
+                <input type="text" id="link" placeholder="Article Link">
+                <input type="text" id="avatar" placeholder="Article Avatar">
+                <input type="text" id="author" placeholder="Article Author Name">
+                <input type="text" id="captionImage" placeholder="Article Caption Image">
+                <button type="submit" id="submit">Upload Article</button>
+            </form>
+        </div>
+    </div>
+    <div class="wrapper">
+
+        <div class="container">
+            <!-- HEADER SECTION -->
+            <header class="header">
+                <h1 class="header__brand">ArticleHotline</h1>
+
+                <div class="header__nav">
+                    <form action="" class="search pr-1">
+                        <input type="text" id="filterInput" class="search__input" placeholder="Search for article">
+                        <input type="submit" value="">
+                    </form>
+                </div>
+            </header>
+
+            <!-- HEADLINES -->
+            <div class="body__container">
+                <div class="headlines" id="headlines">
+
+
+                </div>
+
+                <!-- pagination -->
+                <button id="next"> Next </button>
+                <button id="previous">Previous</button>
+                <button class="toggleForm" id="show-modal">+<button>
+            </div>
+            <footer class="footer">
+                Created with love by Opeoluwa
+            </footer>
+        </div>
+    </div>
+    <script src="./javascript/apirequest.js"></script>
+    <script src="./javascript/search.js"></script>
+    <script src="./javascript/modal.js"></script>
+    <script src="./javascript/index.js"></script>
+</body>
+
+</html>

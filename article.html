@@ -14,7 +14,7 @@
     <div class="container">
         <!-- HEADER SECTION -->
         <header class="header">
-            <h1 class="header__brand">ArticleHotline</h1>
+            <h1  class="header__brand">ArticleHotline</h1>
 
             <div class="header__nav">
                 <form action="" class="search pr-1">
@@ -26,11 +26,10 @@
         </header>
 
         <div class="overlay overlay--hidden"></div>
-        <div class="modal modal--hidden">
+        <div class="modal modal--hidden" id="image-modal">
             <div id="modal__contents" class="modal__contents">
                 <div class="modal__close-bar">
-
-                    <span onclick="toggleModal({ type: 'image' })" style="font-size: 20px; color: grey">X</span>
+                    <span style="font-size: 20px; color: grey" onclick="toggleModal('close');">X</span>
                 </div>
                 <p style="font-size: 20px; margin: 20px;">Fill the form below to upload Image</p>
                 <form id="uploadImageForm">
@@ -40,53 +39,42 @@
             </div>
         </div>
 
-        <div class="modal modal--hidden">
+        <div class="modal modal--hidden"" id="comment-modal">
             <div id="modal__contents" class="modal__contents">
                 <div class="modal__close-bar">
-                    <span style="font-size: 20px; color: grey">X</span>
+                    <span style="font-size: 20px; color: grey" onclick="toggleModal('close');">X</span>
                 </div>
                 <p style="font-size: 20px; margin: 20px;">Fill the form below to upload your article</p>
                 <form id="updateCommentForm">
                     <input type="text" id="author" placeholder="Name">
                     <input type="text" id="comment" placeholder="Comment">
                     <input type="text" id="avatar" placeholder="Avatar">
-                    <input type="text" id="id">
+                    <input type="hidden" id="id">
 
                     <button type="submit" id="submit">Post Comment</button>
                 </form>
             </div>
         </div>
 
-
-
-
         <div class="articleContainer">
             <div class="paper">
                 <span "><a class="paperItem href="index">Home >>> </a></span> <span class="paperItem">Article</span>
             </div>
             <div class="articleTitle">
-                <h2> The Third World World </h2>
+                <h2 id="brand">  </h2>
             </div>
-            <div class="authorAndDate">By Fred Decker | January 2, 2020</div>
+            <div id="authorND" class="authorAndDate"></div>
 
             <div id="article-slider">
-                <div class="article-slide active"><img src="http://lorempixel.com/640/480/fashion" height="100%" width="100%" /></div>
+                <!-- <div class="article-slide active"><img src="http://lorempixel.com/640/480/fashion" height="100%" width="100%" /></div>
                 <div class="article-slide"><img src="http://lorempixel.com/640/480/people" height="100%" width="100%" /></div>
-                <div class="article-slide"><img src="http://lorempixel.com/640/480/cats" height="100%" width="100%" /></div>
+                <div class="article-slide"><img src="http://lorempixel.com/640/480/cats" height="100%" width="100%" /></div> -->
 
-                <div class="article-buttons">
-                    <div class="article-slider-back-btn">
-                        <span>◀</span>
-                    </div>
 
-                    <div class="article-slider-next-btn">
-                        <span>▶</span>
-                    </div>
-                </div>
             </div>
 
             <div class="toggleImageFormParent">
-                <button id="show-modal" class="toggleImageForm"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                <button class="show-modal toggleImageForm" onclick="toggleModal({'target': 'image-modal'})"><i class="fa fa-plus" aria-hidden="true"></i></button>
             </div>
             <div class="articleUrl">
                 <a href="" style="color: blue; text-decoration: underline; margin-top: 105px; font-size: 20px"><i>Visit website for more info</i></a>
@@ -109,7 +97,6 @@
             </div>
 
         </div>
-
     </div>
 
     <script src="./javascript/apirequest.js"></script>
@@ -117,7 +104,7 @@
     <script src="./javascript/slider.js"></script>
     <script src="./javascript/modal.js"></script>
     <script src="./javascript/article.js"></script>
-    <script src="./javascript/index.js"></script>
+    <!-- <script src="./javascript/index.js"></script> -->
 </body>
 
 </html>

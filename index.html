@@ -7,14 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body class="body">
     <div class="overlay overlay--hidden"></div>
-    <div class="modal modal--hidden">
+    <div class="modal modal--hidden" id="article-modal">
         <div id="modal__contents" class="modal__contents">
             <div class="modal__close-bar">
-                <span style="font-size: 20px; color: grey">X</span>
+                <span style="font-size: 20px; color: grey" onclick="toggleModal('close');">X</span>
             </div>
             <p style="font-size: 20px; margin: 20px;">Fill the form below to upload your article</p>
             <form id="uploadArticleForm">
@@ -50,9 +52,11 @@
                 </div>
 
                 <!-- pagination -->
-                <button id="next"> Next </button>
-                <button id="previous">Previous</button>
-                <button class="toggleForm" id="show-modal">+<button>
+                <div id='paginate'>
+                    <button class="btn" id="next"> Next </button>
+                    <button class="btn" id="previous">Previous</button>
+                </div>
+                <button onclick="toggleModal({target: 'article-modal' })" class="toggleForm show-modal">+<button>
             </div>
             <footer class="footer">
                 Created with love by Opeoluwa

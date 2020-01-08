@@ -17,11 +17,17 @@ async function getPaginatedData(pageNo) {
     let num = totalDataLength / 10
     pageNoReverse = num - (pageNo - 1)
   }
-
   //Fetch paginated data 
   let response = await fetch(`http://5e0df4b536b80000143db9ca.mockapi.io/etranzact/v1/article/?page=${pageNoReverse}&limit=10`);
   let data = await response.json()
   return data;
+}
+
+//get single Article
+async function getSingleArticleApi(articleId) {
+  let Article = await fetch(`http://5e0df4b536b80000143db9ca.mockapi.io/etranzact/v1/article/${articleId}`)
+  let data = await Article.json()
+  return data
 }
 
 //post article data 
@@ -86,6 +92,7 @@ function updateCommentDataToApi(data) {
   })
 }
 
+
 //get Image Article
 async function getImageData(articleId) {
   let allImages = await fetch(`http://5e0df4b536b80000143db9ca.mockapi.io/etranzact/v1/article/${articleId}/images`)
@@ -100,5 +107,19 @@ async function getCommentData(articleId) {
   return data
 }
 
+// delete comments data
+async function deleteCommentData(data) {
+  fetch(`http://5e0df4b536b80000143db9ca.mockapi.io/etranzact/v1/article/${data.articleId}/comments/${data.id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  }).then(result => {
+    if (result) {
+      window.location.replace(window.location.href)
+    }
+  })
+}
 
 

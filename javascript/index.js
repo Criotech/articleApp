@@ -32,6 +32,12 @@ function dec() {
     }
 }
 
+let formatDate = function (timestamp) {
+	let date = new Date(timestamp);
+	let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',	'November', 'December'];
+	return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+};
+
 function articleTemplate(article) {
     return `
      <div class="headlines__list" id="headlines__list">
@@ -40,8 +46,9 @@ function articleTemplate(article) {
                         <div class="headlines__list__h2__sub">
                             <div class="authorImage mr-1"> <img src='${article.avatar}' alt='' height='100%' width='100%' style="border-radius: 50%;" /> </div>
                             <span style="font-size: 1.4rem; letter-spacing: 0;"><i>${article.author ? article.author : 'anonymous' } </i></span>
-                            <span class="calender"><i class="fa fa-calendar pl-1" aria-hidden="true" style="color: #777"></i> <i>Jan 2, 2019</i> </span>
-                        </div>
+                            <span class="calender"><i class="fa fa-calendar pl-1" aria-hidden="true" style="color: #777"></i> <i>${formatDate(article.createdAt)}</i> </span>
+                           
+                            </div>
                     </div>
                     
                  </div>

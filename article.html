@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="body">
+    <div class="container">
+        <!-- HEADER SECTION -->
+        <header class="header">
+            <h1 class="header__brand">ArticleHotline</h1>
+
+            <div class="header__nav">
+                <form action="" class="search pr-1">
+                    <input type="text" id="filterInput" class="search__input" placeholder="Search for article">
+                    <input type="submit" value="">
+                </form>
+                <i class="fa fa-search pr-1" aria-hidden="true"></i>
+            </div>
+        </header>
+
+        <div class="overlay overlay--hidden"></div>
+        <div class="modal modal--hidden">
+            <div id="modal__contents" class="modal__contents">
+                <div class="modal__close-bar">
+
+                    <span onclick="toggleModal({ type: 'image' })" style="font-size: 20px; color: grey">X</span>
+                </div>
+                <p style="font-size: 20px; margin: 20px;">Fill the form below to upload Image</p>
+                <form id="uploadImageForm">
+                    <input type="text" id="articleImage" placeholder="Image URL">
+                    <button type="submit" id="submit">Upload Image</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal modal--hidden">
+            <div id="modal__contents" class="modal__contents">
+                <div class="modal__close-bar">
+                    <span style="font-size: 20px; color: grey">X</span>
+                </div>
+                <p style="font-size: 20px; margin: 20px;">Fill the form below to upload your article</p>
+                <form id="updateCommentForm">
+                    <input type="text" id="author" placeholder="Name">
+                    <input type="text" id="comment" placeholder="Comment">
+                    <input type="text" id="avatar" placeholder="Avatar">
+                    <input type="text" id="id">
+
+                    <button type="submit" id="submit">Post Comment</button>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="articleContainer">
+            <div class="paper">
+                <span "><a class="paperItem href="index">Home >>> </a></span> <span class="paperItem">Article</span>
+            </div>
+            <div class="articleTitle">
+                <h2> The Third World World </h2>
+            </div>
+            <div class="authorAndDate">By Fred Decker | January 2, 2020</div>
+
+            <div id="article-slider">
+                <div class="article-slide active"><img src="http://lorempixel.com/640/480/fashion" height="100%" width="100%" /></div>
+                <div class="article-slide"><img src="http://lorempixel.com/640/480/people" height="100%" width="100%" /></div>
+                <div class="article-slide"><img src="http://lorempixel.com/640/480/cats" height="100%" width="100%" /></div>
+
+                <div class="article-buttons">
+                    <div class="article-slider-back-btn">
+                        <span>◀</span>
+                    </div>
+
+                    <div class="article-slider-next-btn">
+                        <span>▶</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toggleImageFormParent">
+                <button id="show-modal" class="toggleImageForm"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+            <div class="articleUrl">
+                <a href="" style="color: blue; text-decoration: underline; margin-top: 105px; font-size: 20px"><i>Visit website for more info</i></a>
+            </div>
+            <br>
+            <hr/>
+            <br>
+            <div class="commentSection" id="commentSection">
+
+            </div>
+
+            <div class="commentForm comment__contents">
+                <div class="commentSection__head">Post a comment</div>
+                <form id="uploadCommentForm">
+                    <input type="text" id="author" placeholder="Name">
+                    <input type="text" id="comment" placeholder="Comment">
+                    <input type="text" id="avatar" placeholder="Article Avatar">
+                    <button class="submitt" style="background-color: #434C51" type="submit" id="submit">Post Comment</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./javascript/apirequest.js"></script>
+    <script src="./javascript/search.js"></script>
+    <script src="./javascript/slider.js"></script>
+    <script src="./javascript/modal.js"></script>
+    <script src="./javascript/article.js"></script>
+    <script src="./javascript/index.js"></script>
+</body>
+
+</html>

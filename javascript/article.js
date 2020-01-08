@@ -90,11 +90,12 @@ function postCommentData(event) {
     console.log('hello')
     document.getElementsByClassName("submitt").innerHTML = `<i style="font-size: 20px" class="fa fa-spinner" aria-hidden="true"></i>`
 
-    let comment = document.getElementById('comment').value;
-    let name = document.getElementById('author').value
-    let avatar = document.getElementById('avatar').value;
+    let comment = document.getElementById('commentt').value;
+    let name = document.getElementById('authorr').value
+    let avatar = document.getElementById('avatarr').value;
 
     let commentData = { name, comment, avatar, articleId: articleNo }
+    console.log(commentData)
 
     postCommentDataToApi(commentData)
 }

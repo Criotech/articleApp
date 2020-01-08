@@ -68,7 +68,7 @@ function postData(event) {
     let url = document.getElementById('link').value
     let avatar = document.getElementById('avatar').value;
 
-    let articleData = { title, author, url, avatar, image }
+    let articleData = { title, author, url, avatar }
   
     postArticleData(articleData)
 }

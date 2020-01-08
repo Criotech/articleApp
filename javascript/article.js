@@ -48,6 +48,8 @@ function getSingleArticle() {
     getSingleArticleApi(data).then(result=>{
         document.getElementById('brand').innerHTML = result.title;
         document.getElementById('authorND').innerHTML = "By "+ " Anonymous" +" | "+formatDate(result.createdAt); 
+        document.getElementById('linkpage').href = result.url;
+
     })
 }
 

@@ -18,14 +18,29 @@
             <div class="modal__close-bar">
                 <span style="font-size: 20px; color: grey" onclick="toggleModal('close');">X</span>
             </div>
-            <p style="font-size: 20px; margin: 20px;">Fill the form below to upload your article</p>
+            <p style="font-size: 20px; margin: 20px;" id="modaltitle">Fill the form below to upload your article</p>
             <form id="uploadArticleForm">
                 <input type="text" id="title" placeholder="Article Title">
                 <input type="text" id="link" placeholder="Article Link">
                 <input type="text" id="avatar" placeholder="Article Avatar">
                 <input type="text" id="author" placeholder="Article Author Name">
-                <input type="text" id="captionImage" placeholder="Article Caption Image">
                 <button type="submit" id="submit">Upload Article</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal modal--hidden" id="create-modal">
+        <div id="modal__contents" class="modal__contents">
+            <div class="modal__close-bar">
+                <span style="font-size: 20px; color: grey" onclick="toggleModal('close');">X</span>
+            </div>
+            <p style="font-size: 20px; margin: 20px;" id="modaltitle">Edit article</p>
+            <form id="editArticleForm">
+                <input type="text" id="title_ed" placeholder="Article Title">
+                <input type="text" id="link_ed" placeholder="Article Link">
+                <input type="text" id="avatar_ed" placeholder="Article Avatar">
+                <input type="text" id="author_ed" placeholder="Article Author Name">
+                <input type="hidden" id="id">
+                <button type="submit" id="submit">Update Article</button>
             </form>
         </div>
     </div>

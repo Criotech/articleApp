@@ -46,6 +46,22 @@ function postArticleData(data) {
   })
 }
 
+//edit article data 
+function editArticleData(data) {
+  console.log('hello', data)
+  fetch(`http://5e0df4b536b80000143db9ca.mockapi.io/etranzact/v1/article/${data.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  }).then(result => {
+    if (result) {
+      location.reload()
+    }
+  })
+}
+
 ///post image data 
 function postImageDataToApi(data) {
   fetch(`http://5e0df4b536b80000143db9ca.mockapi.io/etranzact/v1/article/${data.articleId}/images`, {

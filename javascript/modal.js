@@ -15,6 +15,14 @@ const toggleModal = (data) => {
       document.getElementById('id').value = data.commentId;
 
      break;
+    case 'create-modal':
+      document.getElementById('title_ed').value = data.title;
+      document.getElementById('author_ed').value = data.author;
+      document.getElementById('avatar_ed').value = data.avatar;
+      document.getElementById('id').value = data.id;
+      document.getElementById('link_ed').value = data.link;
+
+     break;
   }
   
   document.querySelector('#'+data.target)
